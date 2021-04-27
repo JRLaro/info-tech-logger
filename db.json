@@ -1,0 +1,52 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "Changed hard drive on workstation 123",
+      "attention": false,
+      "date": "03/02/2020",
+      "tech": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "message": "Upgraded Memory on workstation 456",
+      "attention": true,
+      "date": "03/02/2020",
+      "tech": "Dick Grayson"
+    },
+    {
+      "id": 1,
+      "message": "Debugged issues on workstation 789",
+      "attention": false,
+      "date": "03/02/2020",
+      "tech": "Alfred Pennyworth"
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "Bruce",
+      "lastName": "Wayne"
+    },
+    {
+      "id": 2,
+      "firstName": "Dick",
+      "lastName": "Grayson"
+    },
+    {
+      "id": 3,
+      "firstName": "Barbara",
+      "lastName": "Gordon"
+    },
+    {
+      "id": 4,
+      "firstName": "Jason",
+      "lastName": "Todd"
+    },
+    {
+      "firstName": "Damien",
+      "lastName": "Wayne",
+      "id": 5
+    }
+  ]
+}
