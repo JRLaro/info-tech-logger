@@ -8,6 +8,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_LOG,
+  SEARCH_LOGS,
 } from "./types";
 
 //Get logs from server
@@ -81,6 +82,24 @@ export const deleteLog = (id) => async (dispatch) => {
     dispatch({
       type: DELETE_LOG,
       payload: id,
+    });
+  } catch (err) {
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err.response.data,
+    });
+  }
+};
+
+//Search log
+export const searchLogs = (text) => async (dispatch) => {
+  try {
+    setLoading();
+
+    const res = await axios.get(`/logs?q=${text}`);
+    dispatch({
+      type: SEARCH_LOGS,
+      payload: res.data,
     });
   } catch (err) {
     dispatch({
