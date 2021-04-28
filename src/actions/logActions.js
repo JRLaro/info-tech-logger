@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG } from "./types";
+import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG, DELETE_LOG } from "./types";
 
 //Get logs from server
 export const getLogs = () => async (dispatch) => {
@@ -42,6 +42,24 @@ export const addLog = (log) => async (dispatch) => {
     });
   }
 };
+
+//Delete log
+export const deleteLog = (id) => async (dispatch) => {
+    try {
+      setLoading();
+  
+      await axios.delete(`/logs/${id}`);
+      dispatch({
+        type: DELETE_LOG,
+        payload: id
+      });
+    } catch (err) {
+      dispatch({
+        type: LOGS_ERROR,
+        payload: err.response.data,
+      });
+    }
+  }; 
 
 //Sets loading -> true
 export const setLoading = () => {
