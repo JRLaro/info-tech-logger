@@ -5,7 +5,6 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import { addLog } from "../../actions/logActions";
 import TechSelectOptions from "../techs/TechSelectOptions";
 
-
 const AddLogModal = ({ addLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
@@ -21,7 +20,7 @@ const AddLogModal = ({ addLog }) => {
         tech,
         date: new Date(),
       };
-      
+
       addLog(newLog);
       M.toast({ html: `Log added by: ${tech}` });
 
@@ -36,10 +35,11 @@ const AddLogModal = ({ addLog }) => {
     <div
       id="add-log-modal"
       className="modal"
-      style={{ width: "75%", height: "75%" }}
+      style={{ width: "50%", height: "auto" }}
     >
       <div className="modal-content">
         <h4>Enter System Log</h4>
+        <br/>
         <div className="row">
           <div className="input-field">
             <input
@@ -52,6 +52,16 @@ const AddLogModal = ({ addLog }) => {
               Log Message
             </label>
           </div>
+          <label>
+                <input
+                  type="checkbox"
+              className="filled-in"
+                  checked={attention}
+                  value={attention}
+                  onChange={(e) => setAttention(!attention)}
+                />
+                <span>Mark as Urgent</span>
+              </label>
         </div>
         <div className="row">
           <div className="input-field">
@@ -71,7 +81,16 @@ const AddLogModal = ({ addLog }) => {
         <div className="row">
           <div className="input-field">
             <p>
-              <label>
+                <div>
+                <a
+                  href="#add-tech-modal"
+                  // style={{marginBottom: '5px'}}
+                  className="btn-floating green darken-1 modal-trigger"
+                >
+                  <i className="material-icons">person_add</i>
+                </a>
+                </div>
+              {/* <label>
                 <input
                   type="checkbox"
                   className="filled-in"
@@ -80,7 +99,7 @@ const AddLogModal = ({ addLog }) => {
                   onChange={(e) => setAttention(!attention)}
                 />
                 <span>Needs Attention</span>
-              </label>
+              </label> */}
             </p>
           </div>
         </div>
