@@ -32,7 +32,7 @@ export const getLogs = () => async (dispatch) => {
 //Add logs from server
 export const addLog = (log) => async (dispatch) => {
   const config = {
-    header: {
+    headers: {
       "Content-Type": "application/json",
     },
   };
@@ -56,7 +56,7 @@ export const addLog = (log) => async (dispatch) => {
 //Update log
 export const updateLog = (log) => async (dispatch) => {
   const config = {
-    header: {
+    headers: {
       "Content-Type": "application/json",
     },
   };

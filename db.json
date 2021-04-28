@@ -27,13 +27,6 @@
       "tech": "Dick Grayson",
       "date": "2021-04-28T18:16:39.282Z",
       "id": 4
-    },
-    {
-      "message": "Testing 5",
-      "attention": false,
-      "tech": "Barbara Gordon",
-      "date": "2021-04-28T18:16:49.855Z",
-      "id": 5
     }
   ],
   "techs": [
@@ -61,6 +54,11 @@
       "firstName": "Damien",
       "lastName": "Wayne",
       "id": 5
+    },
+    {
+      "firstName": "James",
+      "lastName": "Gordon",
+      "id": 6
     }
   ]
 }
