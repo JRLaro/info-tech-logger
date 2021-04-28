@@ -1,25 +1,11 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 123",
+      "message": "Testing 1",
       "attention": false,
-      "date": "03/02/2020",
-      "tech": "Bruce Wayne"
-    },
-    {
-      "id": 2,
-      "message": "Upgraded Memory on workstation 456",
-      "attention": true,
-      "date": "03/02/2020",
-      "tech": "Dick Grayson"
-    },
-    {
-      "id": 3,
-      "message": "Debugged issues on workstation 789",
-      "attention": false,
-      "date": "03/02/2020",
-      "tech": "Alfred Pennyworth"
+      "tech": "Bruce Wayne",
+      "date": "2021-04-28T15:19:32.220Z",
+      "id": 1
     }
   ],
   "techs": [

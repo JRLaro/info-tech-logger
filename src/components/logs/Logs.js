@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import {connect} from 'react-redux'
-import axios from "axios";
+// import axios from "axios";
 import LogItem from "./LogItem";
 import PropTypes from 'prop-types'
 import PreLoader from "../layout/PreLoader";
-import { getLogs } from "../../actions/logActions";
+import { getLogs} from "../../actions/logActions";
 
 
-const Logs = ({log: {logs, loading}, getLogs}) => {
- 
+const Logs = ({log: {logs, loading}, getLogs, addLog}) => {
+
 
   useEffect(() => {
-   getLogs();
+    getLogs();
     //eslint-disable-next-line
   }, []);
 
@@ -32,6 +32,7 @@ const Logs = ({log: {logs, loading}, getLogs}) => {
 
 Logs.propTypes = {
   log: PropTypes.object.isRequired,
+  getLogs: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
