@@ -4,23 +4,18 @@ import axios from "axios";
 import LogItem from "./LogItem";
 import PropTypes from 'prop-types'
 import PreLoader from "../layout/PreLoader";
+import { getLogs } from "../../actions/logActions";
 
-const Logs = ({log: {logs, loading}}) => {
+
+const Logs = ({log: {logs, loading}, getLogs}) => {
  
 
   useEffect(() => {
-    getLogs();
+   getLogs();
     //eslint-disable-next-line
   }, []);
 
-
-
-    ///////fetch
-    // const res = await fetch("/logs");
-    // const data = await res.json();
-  };
-
-  if (loading) {
+  if (loading || logs === null) {
     return <PreLoader/>;
   }
 
@@ -43,4 +38,4 @@ const mapStateToProps = state => ({
   log: state.log
 })
 
-export default connect(mapStateToProps)(Logs);
+export default connect(mapStateToProps,{getLogs})(Logs);
